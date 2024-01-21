@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Recognition</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* New styles for displaying recognized text and error messages */
+        div {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            margin-top: 5px;
+        }
+
+        p.error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bored to listen to long speeches?</h1>
+    <h2>Speech Recognition</h2>
+    <form action="/speech" method="post">
+        <label for="wavFile">Select WAV File:</label>
+        <input type="file" id="wavFile" name="wavFile" accept=".wav" required>
+        <br>
+        <input type="submit" value="Upload">
+    </form>
+
+    <!-- New section to display recognized text and error messages -->
+    <div>
+        {% if text %}
+            <h3>Recognized Text:</h3>
+            <p>{{ text }}</p>
+        {% endif %}
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

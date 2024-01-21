@@ -1,0 +1,194 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Link Form</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: blue;
+        }
+        </style>
+    <h1>Enter a YouTube Link</h1>
+    <form method="post" action="/youtubescrap">
+        <label for="youtube_link">YouTube Link:</label>
+        <input type="text" id="youtube_link" name="youtube_link" required>
+        <button type="submit">Submit</button>
+    </form>
+
+   
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Link Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d97d7d;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            /* Stack elements vertically */
+            align-items: center;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            border-bottom: 2px solid #fff;
+        }
+
+        h1 {
+            color: #000000;
+        }
+
+        form {
+            margin: 20px;
+            text-align: center;
+        }
+
+        hr {
+            border: 1px solid #fff;
+            width: 80%;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            
+        }
+
+        .card {
+            display: flex;
+            background-color: #fff;
+            margin: 0 10px;
+            text-align: center;
+            border: 1px black solid;
+            padding-bottom: 30px;
+            flex-direction: column;
+            border-radius: 10px;
+        }
+        
+        img{
+            width: 90px;
+        }
+        .youtube-analysis
+        {
+            width: 15vw;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#speech-to-text">Speech to Text</a>
+        <a href="#youtube-analysis">YouTube Analysis</a>
+        <a href="#social-media-insights">Social Media Insights</a>
+    </nav>
+
+    <h1>Enter a YouTube Link</h1>
+    <form method="post" action="/">
+        <label for="youtube_link">YouTube Link:</label>
+        <input type="text" id="youtube_link" name="youtube_link" class="youtube-analysis"    required>
+        <button type="submit">Submit</button>
+    </form>
+    {% if video_id %}
+    <p>Extracted Video ID: {{ video_id }}</p>
+    {% endif %}
+    <hr>
+
+    <!-- Content goes here -->
+    <h2>Our other services</h2>
+    <div class="content">
+        <!-- Your content sections for each navbar item -->
+        <div class="other-services">
+
+
+            <section id="speech-to-text">
+                <div class="card">
+
+                    <h2>Speech to Text</h2>
+                    <div class="allimg">
+                        <img src="spt.png" alt="">
+                    </div>
+                    <!-- Add content related to Speech to Text -->
+                    <div class="speech-content">
+                        Speech-to-text analysis is a transformative technology that converts spoken language into
+                        written text, offering a multitude of applications across various industries. This cutting-edge
+                        capability is powered by advanced speech recognition algorithms, leveraging machine learning and
+                        neural network models to interpret and transcribe spoken words accurately.
+
+
+                    </div>
+            </section>
+        </div>
+        <section id="youtube-analysis">
+
+            <div class="card">
+                <h2>YouTube Analysis</h2>
+                <div class="allimg">
+                    <img src="ytc.jpg" alt="">
+                </div>
+                <div class="yt-content">
+                    <!-- Add content related to YouTube Analysis -->
+                    YouTube comment analysis is a burgeoning field that delves into the wealth of user-generated content
+                    accompanying videos on the platform. By employing advanced natural language processing techniques,
+                    this
+                    analysis seeks to unravel the sentiments, opinions, and engagement levels embedded within the vast
+
+                </div>
+            </div>
+        </section>
+
+        <section id="social-media-insights">
+            <div class="card">
+
+                <h2>Social Media Insights</h2>
+                <div class="allimg">
+                    <img src="soc.png" alt="social-media">
+                </div>
+                <!-- Add content related to Social Media Insights -->
+                <div class="soc-content">
+                    Analyzing social media through sentiment analysis offers invaluable insights into the collective
+                    mood
+                    and opinions of online communities. This powerful tool leverages natural language processing to
+                    assess
+                </div>
+            </div>
+        </section>
+    </div>
+    </div>
+
+</body>
+
+</html>
