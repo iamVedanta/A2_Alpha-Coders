@@ -13,7 +13,6 @@ from speechtotext.speechtotext import speech
 import wave
 
 
-
 app = Flask(__name__)
 
 
@@ -74,6 +73,7 @@ def index():
         if video_id:
             # If video ID is not None, call the printpanda function
             printpanda(video_id, dev)
+            return "THE data has been submitted"
 
     return render_template('index.html', video_id=video_id)
 
@@ -115,8 +115,6 @@ def recognize_speech():
             return render_template('speech.html', error=f'Error: {str(e)}')
 
         
-
-
 @app.route('/karnataka', methods=['GET', 'POST'])
 def karnataka():
     if request.method == 'GET':
@@ -129,13 +127,6 @@ def delhi():
         img_string = analyse_delhi()
         return render_template('plot1.html', img_str = img_string)
         
-
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
